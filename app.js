@@ -1,17 +1,18 @@
-let boxes=document.querySelectorAll(".game-btn");
 let player1=prompt("Enter your player 1 name (O)");
 let player2=prompt("Enter your player 2 name (X)");
+let boxes=document.querySelectorAll(".game-btn");
 let resetbtn=document.querySelector("#restart-btn");
 let new_game_btn=document.querySelector("#new-game-btn");
 let msg=document.querySelector("#msg");
 let turnO=true;
+new_game_btn.style.display="none"
 let winPattern = [
     [0,1,2],
     [3,4,5],
     [6,7,8],
     [0,3,6],
     [1,4,7],
-    [3,5,8],
+    [2,5,8],
     [0,4,8],
     [2,4,6],
 ];
@@ -28,7 +29,7 @@ boxes.forEach((box)=>{
         }
         box.disabled=true;
         checkwinner();
-        if(isBoardFull()===true){
+        if(isBoardFull()===true && !checkwinner()){
             msg.innerText="IT'S A TIE"
         }
         restartgame();
@@ -63,36 +64,37 @@ function isBoardFull() {
         box.innerText='';
         box.disabled=false;  
         turnO=true;  
-        msg.innerText="";    
+        msg.innerText="";
+        new_game_btn.style.display="none";    
     }
 }); 
 }
 
 // WINNER CHECKING FUNCTION 
-let checkwinner=()=>{
-    for (let pattern of winPattern) {
-        pos1=boxes[pattern[0]].innerText;
-        pos2=boxes[pattern[1]].innerText;
-        pos3=boxes[pattern[2]].innerText;
-        if (pos1!="" && pos2!="" && pos3!="") {
-            if(pos1 === pos2 && pos2 === pos3){
-                if(pos1==='O' && pos2==='O' && pos3==='O' ){
-                    msg.innerText=`PLAYER ${player1} (O) WON THE GAME`;
-                    for (let box of boxes) {
-                        box.disabled=true;
-                        
-                    }
-                    new_game_btn.style.display="block";
-                } else if (pos1==='X' && pos2==='X' && pos3==='X'){
-                     msg.innerText=`PALYER ${player2} (X) WON THE GAME`;
-                     for (let box of boxes) {
-                        box.disabled=true;
-                        
-                    }
-                    new_game_btn.style.display="block";
-                }
-    }
-}
-}
-};
+let checkwinner = () => {
+  for (let pattern of winPattern) {
+    let pos1 = boxes[pattern[0]].innerText;
+    let pos2 = boxes[pattern[1]].innerText;
+    let pos3 = boxes[pattern[2]].innerText;
 
+    if (pos1 !== "" && pos2 !== "" && pos3 !== "") {
+      if (pos1 === pos2 && pos2 === pos3) {
+        if (pos1 === "O") {
+          msg.innerText = `PLAYER ${player1} (O) WON THE GAME`;
+        } else if (pos1 === "X") {
+          msg.innerText = `PLAYER ${player2} (X) WON THE GAME`;
+        }
+
+        // Disable all boxes after a win
+        for (let box of boxes) {
+          box.disabled = true;
+        }
+
+        new_game_btn.style.display = "block";
+
+        return true;  // Winner found
+      }
+    }
+  }
+  return false; // No winner found
+};

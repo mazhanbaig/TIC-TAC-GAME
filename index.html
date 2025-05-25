@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <link href="./output.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>WELCOME TO TIC TAC GAME</h1>
-    <button id="new-game-btn">NEW GAME</button>
-    <div class="container">
-        <div class="game">
-            <button class="game-btn"></button>
-            <button class="game-btn"></button>
-            <button class="game-btn"></button>
-            <button class="game-btn"></button>
-            <button class="game-btn"></button>
-            <button class="game-btn"></button>
-            <button class="game-btn"></button>
-            <button class="game-btn"></button>
-            <button class="game-btn"></button>
-        </div>
+<body class="p-0 m-0 font-sans bg-white bg-center bg-no-repeat bg-cover h-[100vh]">
+
+  <h1 class="text-center text-black text-3xl md:text-4xl font-bold my-4">WELCOME TO TIC TAC GAME</h1>
+
+  <button id="new-game-btn" class="w-[150px] h-[35px] border-none bg-black text-white mt-[10px] ml-auto mr-auto mb-[20px] rounded-[10px] md:ml-[495px]">
+    NEW GAME
+  </button>
+
+  <div class="container grid place-content-center">
+    <div class="game grid place-content-center grid-cols-3 w-[52vw] sm:w-[43vw]  md:w-[45vw] lg:w-[33vw] ml-0 md:ml-[125px] lg:ml-[150px] gap-[10px] sm">
+      <button class="game-btn  h-[80px] w-[80px] sm:h-[95px] sm:w-[95px] md:h-[120px] md:w-[120px] rounded-none bg-[trasparent] border-r-8 border-b-8 border-black text-[25px] md:text-[35px] font-bold text-[brown] shadow-[0_0_10px_black]"></button>
+      <button class="game-btn  h-[80px] w-[80px] sm:h-[95px] sm:w-[95px] md:h-[120px] md:w-[120px] rounded-none bg-[trasparent] border-r-8 border-b-8 border-black text-[25px] md:text-[35px] font-bold text-[brown] shadow-[0_0_10px_black]"></button>
+      <button class="game-btn  h-[80px] w-[80px] sm:h-[95px] sm:w-[95px] md:h-[120px] md:w-[120px] rounded-none bg-[trasparent] border-r-8 border-b-8 border-black text-[25px] md:text-[35px] font-bold text-[brown] shadow-[0_0_10px_black]"></button>
+      <button class="game-btn  h-[80px] w-[80px] sm:h-[95px] sm:w-[95px] md:h-[120px] md:w-[120px] rounded-none bg-[trasparent] border-r-8 border-b-8 border-black text-[25px] md:text-[35px] font-bold text-[brown] shadow-[0_0_10px_black]"></button>
+      <button class="game-btn  h-[80px] w-[80px] sm:h-[95px] sm:w-[95px] md:h-[120px] md:w-[120px] rounded-none bg-[trasparent] border-r-8 border-b-8 border-black text-[25px] md:text-[35px] font-bold text-[brown] shadow-[0_0_10px_black]"></button>
+      <button class="game-btn  h-[80px] w-[80px] sm:h-[95px] sm:w-[95px] md:h-[120px] md:w-[120px] rounded-none bg-[trasparent] border-r-8 border-b-8 border-black text-[25px] md:text-[35px] font-bold text-[brown] shadow-[0_0_10px_black]"></button>
+      <button class="game-btn  h-[80px] w-[80px] sm:h-[95px] sm:w-[95px] md:h-[120px] md:w-[120px] rounded-none bg-[trasparent] border-r-8 border-b-8 border-black text-[25px] md:text-[35px] font-bold text-[brown] shadow-[0_0_10px_black]"></button>
+      <button class="game-btn  h-[80px] w-[80px] sm:h-[95px] sm:w-[95px] md:h-[120px] md:w-[120px] rounded-none bg-[trasparent] border-r-8 border-b-8 border-black text-[25px] md:text-[35px] font-bold text-[brown] shadow-[0_0_10px_black]"></button>
+      <button class="game-btn  h-[80px] w-[80px] sm:h-[95px] sm:w-[95px] md:h-[120px] md:w-[120px] rounded-none bg-[trasparent] border-r-8 border-b-8 border-black text-[25px] md:text-[35px] font-bold text-[brown] shadow-[0_0_10px_black]"></button>
+      
     </div>
+  </div>
+
+  <div class="msg-container text-[16px] md:text-[20px] text-black flex justify-center items-center mt-4 px-2">
     <p id="msg"></p>
-    <button id="restart-btn">Restart Game</button>
-    <script src="app.js"></script>
+  </div>
+
+  <button id="restart-btn" class="w-[150px] h-[35px] border-none bg-black text-white ml-auto mr-auto mt-[10px] mb-[30px] rounded-[10px] md:ml-[43vw] block">
+    Restart Game
+  </button>
+
+  <script src="app.js"></script>
 </body>
 </html>
