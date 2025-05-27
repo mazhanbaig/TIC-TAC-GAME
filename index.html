@@ -8,24 +8,27 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen flex flex-col bg-cover bg-left bg-no-repeat overflow-x-hidden" style='background-image: url("images/printest image.jpg");'>
-
+  <!-- WELCOME HEADING -->
   <h1 class="text-center text-black text-5xl md:text-4xl font-bold mt-[30px] mb-[30px] underline decoration-wavy underline-offset-[2px] decoration-white">WELCOME TO <span class="block md:inline">TIC TAC GAME</span></h1>
+   <!--CHALLENGE HEADING  -->
   <p class="text-center text-gray-800 text-lg md:text-xl mb-6 italic">
   Challenge your mind & have fun playing Tic Tac Toe!
   </p>
-  <hr class="border-t-2 border-black w-24 mx-auto mb-6 rounded" />
+  <!-- HR LINE -->
+  <hr class="border-t-2 border-black w-28 mx-auto mb-6 rounded" />
+  <!-- HOW TO PLAY BUTTON -->
   <button id="play" class="animate-pulse block mx-auto bg-[darkcyan] hover:bg-yellow-500 text-black font-semibold py-2 px-6 rounded shadow-md transition duration-300 sm:mb-4 md:mb-8">
      <span>
       How to Play
      </span>
   </button>
+  <!-- JOKE RELATED TO HOW TO PLAY BUTTON -->
 
-  <p id="play-info" class="hidden text-center text-black font-medium text-lg mt-[-30px] sm:mb-2 md:mb-[20px]">
+  <p id="play-info" class="hidden text-center text-black font-medium text-lg mt-[10px] md:mt-[-10px] sm:mb-2 md:mb-[15px]">
   BY YOUR OWN 😁.
   </p>
-
-
-  <button id="new-game-btn" class="w-[150px] h-[35px] border-none bg-black text-white mt-[10px] ml-auto mr-auto mb-[20px] rounded-[10px] md:ml-[495px]">
+  <!-- NEW BUTTON -->
+  <button id="new-game-btn" class="w-[150px] h-[35px] border-none bg-black text-white mt-[10px] ml-auto mr-auto mb-[-15px] md:mb-[20px] rounded-[10px] md:ml-[495px]">
     NEW GAME
   </button>
   <main class="max-h-screen md:max-h-[400px] flex-grow flex flex-col items-center justify-center">
@@ -33,27 +36,27 @@
     <div class=" flex justify-center items-center">
     <div class="game grid grid-cols-3 gap-0 mb-0">
       <button class="game-btn h-[100px] w-[100px] sm:h-[110px] sm:w-[110px] md:h-[140px] md:w-[140px] bg-white rounded-none border-r-4 border-b-4 border-black text-[35px] md:text-[45px] font-bold text-[#8e9128] shadow-[0_0_10px_black]"></button>
-      <button class="game-btn  h-[100px] w-[100px]  sm:h-[110px] sm:w-[110px] md:h-[140px] md:w-[140px] bg-white rounded-none border-r-4 border-b-4 border-black text-[25px] md:text-[35px] font-bold text-[#8e9128] shadow-[0_0_10px_black]"></button>
-      <button class="game-btn  h-[100px] w-[100px]  sm:h-[110px] sm:w-[110px] md:h-[140px] md:w-[140px] bg-white rounded-none border-b-4 border-black text-[25px] md:text-[35px] font-bold text-[#8e9128] shadow-[0_0_10px_black]"></button>
-      <button class="game-btn  h-[100px] w-[100px]  sm:h-[110px] sm:w-[110px] md:h-[140px] md:w-[140px] bg-white rounded-none border-r-4  border-b-4 border-black text-[25px] md:text-[35px] font-bold text-[#8e9128] shadow-[0_0_10px_black]"></button>
-      <button class="game-btn  h-[100px] w-[100px]  sm:h-[110px] sm:w-[110px] md:h-[140px] md:w-[140px] bg-white rounded-none border-r-4 border-b-4 border-black text-[25px] md:text-[35px] font-bold text-[#8e9128] shadow-[0_0_10px_black]"></button>
-      <button class="game-btn  h-[100px] w-[100px]  sm:h-[110px] sm:w-[110px] md:h-[140px] md:w-[140px] bg-white rounded-none border-b-4 border-black text-[25px] md:text-[35px] font-bold text-[#8e9128] shadow-[0_0_10px_black]"></button>
-      <button class="game-btn  h-[100px] w-[100px]  sm:h-[110px] sm:w-[110px] md:h-[140px] md:w-[140px] bg-white rounded-none  border-r-4  border-black text-[25px] md:text-[35px] font-bold text-[#8e9128] shadow-[0_0_10px_black]"></button>
-      <button class="game-btn  h-[100px] w-[100px]  sm:h-[110px] sm:w-[110px] md:h-[140px] md:w-[140px] bg-white rounded-none border-r-4  border-black text-[25px] md:text-[35px] font-bold text-[#8e9128] shadow-[0_0_10px_black]"></button>
-      <button class="game-btn  h-[100px] w-[100px] sm:h-[110px] sm:w-[110px] md:h-[140px] md:w-[140px] bg-white rounded-none  border-black text-[25px] md:text-[35px] font-bold text-[#8e9128] shadow-[0_0_10px_black]"></button>
+      <button class="game-btn  h-[100px] w-[100px]  sm:h-[110px] sm:w-[110px] md:h-[140px] md:w-[140px] bg-white rounded-none border-r-4 border-b-4 border-black text-[35px] md:text-[45px] font-bold text-[#8e9128] shadow-[0_0_10px_black]"></button>
+      <button class="game-btn  h-[100px] w-[100px]  sm:h-[110px] sm:w-[110px] md:h-[140px] md:w-[140px] bg-white rounded-none border-b-4 border-black text-[35px] md:text-[45px] font-bold text-[#8e9128] shadow-[0_0_10px_black]"></button>
+      <button class="game-btn  h-[100px] w-[100px]  sm:h-[110px] sm:w-[110px] md:h-[140px] md:w-[140px] bg-white rounded-none border-r-4  border-b-4 border-black text-[35px] md:text-[45px] font-bold text-[#8e9128] shadow-[0_0_10px_black]"></button>
+      <button class="game-btn  h-[100px] w-[100px]  sm:h-[110px] sm:w-[110px] md:h-[140px] md:w-[140px] bg-white rounded-none border-r-4 border-b-4 border-black text-[35px] md:text-[45px] font-bold text-[#8e9128] shadow-[0_0_10px_black]"></button>
+      <button class="game-btn  h-[100px] w-[100px]  sm:h-[110px] sm:w-[110px] md:h-[140px] md:w-[140px] bg-white rounded-none border-b-4 border-black text-[35px] md:text-[45px] font-bold text-[#8e9128] shadow-[0_0_10px_black]"></button>
+      <button class="game-btn  h-[100px] w-[100px]  sm:h-[110px] sm:w-[110px] md:h-[140px] md:w-[140px] bg-white rounded-none  border-r-4  border-black text-[35px] md:text-[45px] font-bold text-[#8e9128] shadow-[0_0_10px_black]"></button>
+      <button class="game-btn  h-[100px] w-[100px]  sm:h-[110px] sm:w-[110px] md:h-[140px] md:w-[140px] bg-white rounded-none border-r-4  border-black text-[35px] md:text-[45px] font-bold text-[#8e9128] shadow-[0_0_10px_black]"></button>
+      <button class="game-btn  h-[100px] w-[100px] sm:h-[110px] sm:w-[110px] md:h-[140px] md:w-[140px] bg-white rounded-none  border-black text-[35px] md:text-[45px] font-bold text-[#8e9128] shadow-[0_0_10px_black]"></button>
       
     </div>
   </div>
   </main>
-
-
+  <!-- MSG CONTAINER FOR GAME RESULT -->
   <div class="msg-container text-[16px] md:text-[20px] text-black text-center mt-[20px]  h-auto">
     <p id="msg"></p>
   </div>
-
+  <!-- RESTART BUTTON FOR GAME -->
   <button id="restart-btn" class="mb-[10px] w-[150px] h-10 border-none bg-black text-white ml-auto mr-auto mt-[20px] rounded-[10px] md:ml-[43vw] block">
     Restart Game
   </button>
+  <!--  FINALLY FOOTER SECTION 😀 -->
   <footer class="bg-black text-white text-center py-4 mt-auto w-full ">
   <p class="text-sm md:text-base">&copy; 2025 Tic Tac Game. All rights reserved.</p>
   <div class="mt-2 flex justify-center gap-4 text-gray-400 text-sm">
