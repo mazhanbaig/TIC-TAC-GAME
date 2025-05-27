@@ -4,6 +4,8 @@ let boxes=document.querySelectorAll(".game-btn");
 let resetbtn=document.querySelector("#restart-btn");
 let new_game_btn=document.querySelector("#new-game-btn");
 let msg=document.querySelector("#msg");
+const playButton = document.querySelector("#play");
+const playInfo = document.querySelector("#play-info");
 let turnO=true;
 new_game_btn.style.display="none"
 let winPattern = [
@@ -30,7 +32,7 @@ boxes.forEach((box)=>{
         box.disabled=true;
         checkwinner();
         if(isBoardFull()===true && !checkwinner()){
-            msg.innerText="IT'S A TIE"
+            msg.innerText="IT'S A TIE,GOOD LUCK NEXT TIME";
         }
         restartgame();
         newgame();
@@ -68,7 +70,11 @@ function isBoardFull() {
         new_game_btn.style.display="none";    
     }
 }); 
-}
+};
+// paly button function event 
+playButton.addEventListener("click", () => {
+  playInfo.classList.toggle("hidden");
+});
 
 // WINNER CHECKING FUNCTION 
 let checkwinner = () => {
