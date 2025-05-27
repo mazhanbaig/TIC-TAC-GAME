@@ -1,5 +1,5 @@
 let player1=prompt("Enter your player 1 name (O)");
-let player2=prompt("Enter your player 2 name (X)");
+let player2="AI";
 let boxes=document.querySelectorAll(".game-btn");
 let resetbtn=document.querySelector("#restart-btn");
 let new_game_btn=document.querySelector("#new-game-btn");
@@ -34,10 +34,28 @@ boxes.forEach((box)=>{
         if(isBoardFull()===true && !checkwinner()){
             msg.innerText="IT'S A TIE,GOOD LUCK NEXT TIME";
         }
+       // === CALL AI MOVE HERE ===
+        setTimeout(aiMove, 500); // slight delay for realism
         restartgame();
         newgame();
     });
 });
+// AI move for player X — added this function
+function aiMove() {
+    if (turnO === false && !checkwinner() && !isBoardFull()) {
+        let emptyBoxes = Array.from(boxes).filter(box => box.innerText === '');
+        if (emptyBoxes.length > 0) {
+            let randomBox = emptyBoxes[Math.floor(Math.random() * emptyBoxes.length)];
+            randomBox.innerText = 'X';
+            randomBox.disabled = true;
+            turnO = true;
+            checkwinner();
+            if (isBoardFull() && !checkwinner()) {
+                msg.innerText = "IT'S A TIE, GOOD LUCK NEXT TIME";
+            }
+        }
+    }
+}
 // This function checks if all boxes are filled
 function isBoardFull() {
     for (let box of boxes) {
@@ -88,7 +106,7 @@ let checkwinner = () => {
         if (pos1 === "O") {
           msg.innerText = `PLAYER ${player1} (O) WON THE GAME`;
         } else if (pos1 === "X") {
-          msg.innerText = `PLAYER ${player2} (X) WON THE GAME`;
+          msg.innerText = `${player2} (X) WON THE GAME`;
         }
 
         // Disable all boxes after a win
